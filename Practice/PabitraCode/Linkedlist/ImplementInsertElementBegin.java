@@ -77,5 +77,6 @@ public class ImplementInsertElementBegin {
         ll.insertAt(0, 200);
         System.out.println();
         ll.display();
+        
     }
 }
