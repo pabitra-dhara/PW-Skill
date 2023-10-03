@@ -16,13 +16,21 @@ public class StackUsingLinkedList {
             head=a;
             size++;
         }
-        void display(){
+        void displayrev(){
             Node temp=head;
             while(temp!=null){
                 System.out.print(temp.data+" ");
                 temp=temp.next;
             }
             System.out.println();
+        }
+        void displayhelp(Node h){
+            if(h==null) return;
+            displayhelp(h.next);
+            System.out.print(h.data);
+        }
+        void display(){
+            displayhelp(head);
         }
         int size(){
             return size;
@@ -39,8 +47,9 @@ public class StackUsingLinkedList {
                 System.out.print("Stack Underflow!!!");
                 return -1;
             }
-            
-            
+            int x=head.data;
+            head=head.next;
+            return x;
         }
     }
     public static void main(String[] args) {
@@ -49,8 +58,10 @@ public class StackUsingLinkedList {
         st.push(2);
         st.push(3);
         st.push(4);
+        st.display();// 1 2 3 4
+        System.out.print(st.size());//4
+        System.out.println(st.peek());//4 
+        System.out.println(st.pop());//4
         st.display();
-        System.out.print(st.size());
-        System.out.println(st.peek());
     }
 }
