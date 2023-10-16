@@ -62,6 +62,30 @@ public class dump {
         return false;
     }
 
+    public static Node removeElements(Node head, int val) {
+        Node p=new Node(100);
+        Node ans=p;
+        Node c=head;
+        int size=0;
+        while(c!=null){
+            size++;
+            if(c.data==val){
+                p.next=c.next;
+                p=c;
+                c=c.next;
+            }else{
+                p.next=c;
+                p=c;
+                c=c.next;
+            }
+        }
+        if(size*val/val==size){
+            Node s=null;
+            return s;
+        }
+        return ans.next;
+    }
+
     public static boolean palin(Node head){
         Node temp=head;
         Node temp1=head;
@@ -109,28 +133,36 @@ public class dump {
         return head;
     }
     public static void main(String[] args) {
-        Node a=new Node(1);
-        Node b=new Node(1);
-        Node c=new Node(2);
-        Node d=new Node(1);
-        Node e=new Node(1);
-        Node f=new Node(1);
+        Node a=new Node(7);
+        Node b=new Node(7);
+        Node c=new Node(7);
+        Node d=new Node(7);
+        Node e=new Node(7);
+        Node f=new Node(7);
+        Node g=new Node(7);
         a.next=b;
         b.next=c;
         c.next=d;
-        d.next=null;
+        d.next=e;
+        e.next=f;
+        f.next=g;
+        g.next=null;
         // e.next=f;
         // f.next=null;
         // display(a);
         // a=insertAtHead(4, a);
         // a=insertAtHead(5, a);
         display(a);
-        Node ans=null;
+        // Node ans=null;
         // ans=removeduplicate(a);
         //ans=reverse(a);
         //System.out.println(palin(a));
         //ans=palindrom(a);
        //display(ans);
-       System.out.println(palindrom(a));
+    //    System.out.println(palindrom(a));
+        Node ans=null;
+        ans=removeElements(a,7);
+        display(ans);
     }
 }
+
