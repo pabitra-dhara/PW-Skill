@@ -7,6 +7,48 @@ public class MargeTwoLinkedList {
         }
     }
 
+    public static int reverse(int n){
+        int re=0;
+        while(n!=0){
+            int digit=n%10;
+            re=re*10+digit;
+            n/=10;
+        }
+        return re;
+    }
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode temp1=l1;
+        ListNode temp2=l2;
+        int val1=0;
+        int val2=0;
+        while(temp1!=null){
+            int curr=temp1.data;
+            val1=val1*10+curr;
+            temp1=temp1.next;
+        }
+        while(temp2!=null){
+            int curr=temp2.data;
+            val2=val2*10+curr;
+            temp2=temp2.next;
+        }
+        // int rev1=;
+        // int rev2=;
+        int ans=reverse(val1)+reverse(val2);
+        //System.out.println(rev1+" "+rev2+" "+ ans);
+        ListNode temp=new ListNode(100);
+        ListNode d=temp;
+        int rev=0;
+        while(ans!=0){
+            int digit=ans%10;
+            ListNode a=new ListNode(digit);
+            temp.next=a;
+            temp=temp.next;
+            rev*=10+digit;
+            ans/=10;
+        }
+        return d.next;
+    }
+
     public static void display(ListNode head){
         ListNode temp=head;
         while(temp!=null){
@@ -66,18 +108,18 @@ public class MargeTwoLinkedList {
         return ans.next;
     }
     public static void main(String[] args) {
-        ListNode a=new ListNode(10);
-        ListNode b=new ListNode(11);
-        ListNode c=new ListNode(12);
-        ListNode d=new ListNode(13120);
+        ListNode a=new ListNode(2);
+        ListNode b=new ListNode(3);
+        ListNode c=new ListNode(1);
+        ListNode d=new ListNode(1);
         a.next=b;
         b.next=c;
         c.next=d;
         d.next=null;
-        ListNode e=new ListNode(50);
-        ListNode f=new ListNode(51);
-        ListNode g=new ListNode(52);
-        ListNode h=new ListNode(53);
+        ListNode e=new ListNode(5);
+        ListNode f=new ListNode(2);
+        ListNode g=new ListNode(1);
+        ListNode h=new ListNode(1);
         e.next=f;
         f.next=g;
         g.next=h;
@@ -86,7 +128,9 @@ public class MargeTwoLinkedList {
         // result=sortTwoLinkedListWithoutExtraSpace(a, e);
         // display(result);
         ListNode ans=null;
-        ans=sortLinkedListUsingExtraSpace(a, e);
+        // ans=sortLinkedListUsingExtraSpace(a, e);
+        // display(ans);
+        ans=addTwoNumbers(a, e);
         display(ans);
     
     }
