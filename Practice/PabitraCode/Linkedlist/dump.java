@@ -155,6 +155,7 @@ public class dump {
         display(a);
         // Node ans=null;
         // ans=removeduplicate(a);
+        // display(ans);
         //ans=reverse(a);
         //System.out.println(palin(a));
         //ans=palindrom(a);
