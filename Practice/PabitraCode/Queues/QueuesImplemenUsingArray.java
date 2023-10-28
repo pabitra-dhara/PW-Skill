@@ -11,10 +11,10 @@ public class QueuesImplemenUsingArray {
             }
             if(f==-1){
                 f=r=0;
-                arr[f]=val;
+                arr[0]=val;
             }else{
-                arr[f+1]=val;
-                f++;
+                arr[r+1]=val;
+                r++;
             }
             size++;
         }
@@ -26,7 +26,7 @@ public class QueuesImplemenUsingArray {
             }
             f++;
             size--;
-            return arr[f];
+            return arr[f-1];
         }
 
         public int peek(){
@@ -44,7 +44,7 @@ public class QueuesImplemenUsingArray {
             return false;
         }
         public void display(){
-            for(int i=f;i<r;i++){
+            for(int i=f;i<=r;i++){
                 System.out.print(arr[i]+" ");
             }
             System.out.println();
@@ -57,6 +57,10 @@ public class QueuesImplemenUsingArray {
         obj.add(3);
         obj.add(4);
         obj.add(5);
-        obj.display();
+        obj.display();//1 2 3 4 5 
+        System.out.println(obj.peek());// 1
+        System.out.println(obj.isEmpty()); // false
+        System.out.println(obj.remove());// 1
+        obj.display();// 2 3 4 5
     }
 }
