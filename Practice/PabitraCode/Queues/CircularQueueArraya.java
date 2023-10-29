@@ -3,7 +3,7 @@ public class CircularQueueArraya {
         private int front=-1;
         private int rear=-1;
         int size=0;
-        int arr[]=new int[10];
+        int arr[]=new int[8];
 
         public void add(int val) throws Exception{
             if(size==arr.length){
@@ -91,6 +91,11 @@ public class CircularQueueArraya {
         System.out.println(obj.peek());//2
         System.out.println(obj.isEmpty());//false
         obj.display();//2 3 4 5  6 7 8
-
+        System.out.println(obj.size);
+        obj.add(9);
+        obj.display();
+        for(int i=0;i<obj.arr.length;i++){
+            System.out.print(obj.arr[i]+" ");
+        }
     }
 }
