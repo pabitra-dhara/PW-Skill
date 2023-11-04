@@ -17,6 +17,15 @@ public class DoubleLinkedListInsertion {
         }
         System.out.println();
     }
+    public static void insertAtTail(Node head,int x){
+        Node temp=head;
+        while(temp.next!=null){
+            temp=temp.next;
+        }
+        Node t=new Node(x);
+        temp.next=t;
+        t.prev=temp;
+    }
     public static Node insertAtHead(Node head,int x){
         Node t=new Node(x);
         t.next=head;
@@ -43,8 +52,9 @@ public class DoubleLinkedListInsertion {
         e.next=f;
         f.prev=e;
         f.next=null;
-
-        insertAtHead(a, 9);
-        display(a);
+        Node newHead=insertAtHead(a, 9);
+        display(newHead);
+        insertAtTail(newHead, 10);
+        display(newHead);
     }
 }
