@@ -1,6 +1,6 @@
 package DoubleLinkedList;
 
-public class DoubleLinkedListInsertion {
+public class DoubleLinkedListInsertAnyIndex {
     public static class Node{
         int data;
         Node next;
@@ -9,29 +9,25 @@ public class DoubleLinkedListInsertion {
             this.data=data;
         }
     }
+    public static void insertAnyIndex(Node head,int idx,int x){
+        Node s=head;
+        for(int i=1;i<idx;i++){
+            s=s.next;
+        }
+        Node r=s.next;
+        Node t=new Node(x);
+        s.next=t;
+        t.prev=s;
+        t.next=r;
+        r.prev=t;
+    }
     public static void display(Node head){
         Node temp=head;
         while(temp!=null){
-            System.out.print(temp.data+"->");
+            System.out.print(temp.data+" ");
             temp=temp.next;
         }
         System.out.println();
-    }
-    public static void insertAtTail(Node head,int x){
-        Node temp=head;
-        while(temp.next!=null){
-            temp=temp.next;
-        }
-        Node t=new Node(x);
-        temp.next=t;
-        t.prev=temp;
-    }
-    public static Node insertAtHead(Node head,int x){
-        Node t=new Node(x);
-        t.next=head;
-        head.prev=t;
-        head=t;
-        return head;
     }
     public static void main(String[] args) {
         Node a=new Node(1);
@@ -52,9 +48,8 @@ public class DoubleLinkedListInsertion {
         e.next=f;
         f.prev=e;
         f.next=null;
-        // Node newHead=insertAtHead(a, 9);
-        // display(newHead);
-        // insertAtTail(newHead, 10);
-        // display(newHead);
+        display(a);
+        insertAnyIndex(a, 3, 9);
+        display(a);
     }
 }
