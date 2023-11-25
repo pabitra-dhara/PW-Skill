@@ -9,24 +9,8 @@ public class sortLinkedList {
         }
     }
     static ListNode sortList(ListNode head){
-        ListNode temp=head;
-        ArrayList<Integer> ar=new ArrayList<>();
         int size=0;
-        while(temp!=null){
-            size++;
-            int s=temp.data;
-            ar.add(s);
-            temp=temp.next;
-        }
-        ListNode ans=null;
-        for(int i=0;i<size;i++){
-            for(int j=1;j<size-i;j++){
-                if(ar.get(j-1)>ar.get(j)){
-                    int t=ar.get(j-1);
-                    ar.
-                }
-            }
-        }
+        ListNode temp=head;
     }
     static void display(ListNode head){
         ListNode temp=head;
