@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class ListInterfaceExample {
     static void ArrayListExamples(){
-        ArrayList<Integer> l=new ArrayList<>();
+        //ArrayList<Integer> l=new ArrayList<>();
+        LinkedList<Integer> l=new LinkedList<>();
         l.add(1);
         l.add(2);
         System.out.println(l);
