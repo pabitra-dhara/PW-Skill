@@ -1,8 +1,23 @@
+import java.util.ArrayDeque;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 public class queueinterface {
+    public static void DequeEx(){
+        System.out.println("Array Deque:");
+        Deque<Integer> dq=new ArrayDeque<>(); 
+        dq.addFirst(1);
+        dq.addFirst(2);// 2 1 
+        dq.addLast(5);
+        dq.addLast(6);//2 1 5 6
+        System.out.println(dq);
+        System.out.println(dq.pollFirst());//2
+        System.out.println(dq.pollFirst());//1
+        System.out.println(dq);//5 6 
+
+    }
     public static void priorityQueueExam(){
         //min priority queue
         //PriorityQueue<Integer> qe=new PriorityQueue<>();
@@ -38,5 +53,6 @@ public class queueinterface {
     public static void main(String[] args) {
         QueueExem();
         priorityQueueExam();
+        DequeEx();
     }
 }
