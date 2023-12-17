@@ -10,6 +10,8 @@ public class HashMapWorking {
         mp.put("Pabitra",1);
         mp.put("Rudra",2);
         mp.put("Subha",3);
+        
+
 
         //Getting values of a key from the HashMap
         System.out.println(mp.get("Pabitra"));//1
