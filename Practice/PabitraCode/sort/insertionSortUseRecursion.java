@@ -6,7 +6,7 @@ public class insertionSortUseRecursion {
         if(arr.length==arr.length+1){
             return;
         }
-        int ans=insertionSort(arr+1);
+        int ans=insertionSort(arr[]);
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
