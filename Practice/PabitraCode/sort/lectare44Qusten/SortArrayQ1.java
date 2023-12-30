@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class SortArrayQ1 {
     static void sortArr(int arr[],int size){
+        if(size<=1) return;
         int x=-1,y=-1;
         for(int i=1;i<size;i++){
             if(arr[i-1]>arr[i]){
