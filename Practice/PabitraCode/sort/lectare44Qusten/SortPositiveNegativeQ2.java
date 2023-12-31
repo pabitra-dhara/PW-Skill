@@ -13,12 +13,14 @@ public class SortPositiveNegativeQ2 {
         int l=0;
         int r=arr.length-1;
         while(l<r){
-            while(arr[l]<0){
-                l++;
-            }
-            while(arr[r]>0){
-                r--;
-            }
+            // while(arr[l]<0){
+            //     l++;
+            // }
+            // while(arr[r]>0){
+            //     r--;
+            // }
+            if(arr[l]<0) l++;
+            if(arr[r]>0) r--;
             if(l<r){
                 int temp=arr[l];
                 arr[l]=arr[r];
