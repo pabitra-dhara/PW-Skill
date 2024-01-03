@@ -5,7 +5,7 @@ public class BinarySearchUsingRecursion {
         if(start>end){
             return false;
         }
-        int mid=(start+end)/2;
+        int mid=start+(end-start)/2;
         if(target==arr[mid]) return true;
         else if(target>arr[mid]) return recbinearySearch(arr, start+1, end, target);
         else return recbinearySearch(arr, start, end-1, target);
