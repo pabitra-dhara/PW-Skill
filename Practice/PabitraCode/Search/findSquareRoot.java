@@ -5,7 +5,7 @@ public class findSquareRoot {
         int ans=-1;
         while(st<=end){
             int mid=st+(end-st)/2;
-            int val=mid*mid;
+            int val=mid*mid;//use long here to avoid overflow 
             if(mid==x){
                 return mid;
             }else if(val<x){
