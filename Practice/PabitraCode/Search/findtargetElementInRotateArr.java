@@ -6,11 +6,8 @@ public class findtargetElementInRotateArr {
         int ans=-1;
         while(st<=end){
             int mid=st+(end-st)/2;
-            if(a[mid]<=a[n-1] && a[mid]<=k){
-                ans=mid;
-                end=mid-1;
-            }else if(a[mid]>a[n-1]){
-                st=mid+1;
+            if(a[mid]<a[end]){
+                if(k>a[mid])
             }
         }
         return ans;
